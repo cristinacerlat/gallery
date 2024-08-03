@@ -1,0 +1,104 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+body {
+  background-color: rgb(247, 247, 232);
+}
+.maincontainer {
+  position: relative;
+  height: 200vh;
+  margin: 50px 50px;
+ 
+  display: grid;
+  grid-template-columns: auto auto auto auto auto;
+  grid-gap: 2vmin;
+  grid-auto-flow: dense;
+}
+h1 {
+  position: relative;
+  height: auto;
+  width: 250px;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 5% 0 2% 0;
+  text-align: center;
+  font-size: 3em;
+  font-weight: 950;
+  letter-spacing: 1.5px;
+  color: rgb(198, 109, 36);
+  border-left: 5px solid rgb(235, 116, 32);
+  border-right: 5px solid rgb(235, 116, 32);
+  background: none;
+}
+p {
+  position: relative;
+  height: 100%;
+  text-align: center;
+  font-size: 2em;
+  font-weight: 150;
+  color: rgb(198, 109, 36);
+  margin-bottom: 20px;
+}
+
+.photo-item {
+  position: relative;
+}
+.maincontainer .photo-item .image {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.maincontainer .photo-item .image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  cursor: pointer;
+  filter: brightness(0.5) grayscale(100);
+}
+.photo-item:hover .image img {
+  transform: scale(1.1);
+  filter: brightness(1) grayscale(0);
+}
+.photo-item .text {
+  position: absolute;
+  bottom: 0;
+  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.5);
+  color: #f1f1f1;
+  width: 100%;
+  transition: 1.5s ease;
+  opacity: 0;
+  color: white;
+  font-size: 20px;
+  text-align: center;
+  content: fit;
+}
+.photo-item:hover .text {
+  opacity: 75%;
+}
+
+.maincontainer .photo-item:first-child {
+  grid-column-start: span 2;
+  grid-row-start: span 2;
+}
+
+.maincontainer .photo-item:nth-child(2n + 3) {
+    grid-column-start: span 1;
+}
+.maincontainer .photo-item:nth-child(3n + 5) {
+    grid-column-start: span 2;
+    grid-row-start: span 2;
+}
+.maincontainer .photo-item:nth-child(3n + 5) {
+    grid-column-start: span 2;
+    grid-row-start: span 2;
+}
+
+.maincontainer .photo-item:last-child {
+  grid-column-start: span 5;
+  grid-row-start: span 2;
+}
